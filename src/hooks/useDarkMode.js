@@ -7,10 +7,8 @@ const useDarkMode = () => {
     console.log('storedValue from useDarkMode', storedValue)
 
     useEffect(() => {
-        // const bodyTag = document.getElementsByTagName('body')
-        const bodyTag = document.getElementById('test')
+        let bodyTag = document.getElementsByTagName('body')[0];
         return storedValue ? bodyTag.classList.add('dark-mode') : bodyTag.classList.remove('dark-mode')
-        // return (storedValue ? alert('returning true') : alert('returning false'))
     }, [storedValue]);
 
     return [storedValue, setStoredValue];
